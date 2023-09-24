@@ -276,8 +276,6 @@ li pre, table pre, blockquote pre, di pre, dd pre {
   box-shadow: none;
 }
 
-img {
-}
 li img, table img, blockquote img, di img, dd img {
   box-shadow: none;
 }
@@ -365,36 +363,7 @@ mark {
 }
 
 /** Typora specific **/
-p>.md-image:only-child {
-  width: auto !important;
-}
-
-sup.md-footnote {
-  color: black;
-}
-
-#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre {
-  width: auto;
-}
-
-h3.md-focus:before {
-    border-radius: 2rem 0 0 2rem;
-}
-h4.md-focus:before, h5.md-focus:before, h6.md-focus:before {
-  border-radius: 0;
-}
-h3.md-focus:before, h4.md-focus:before, h5.md-focus:before, h6.md-focus:before {
-    content: '';
-    color: none;
-    border: none;
-    position:  relative;
-    left: auto;
-    top: auto;
-    float: auto;
-    font-size: auto;
-    padding-left: auto;
-    padding-right: auto;
-    vertical-align: auto;
-    font-weight: auto;
-    line-height: auto;
+.CodeMirror * {
+  font-family: Share Tech Mono;
+  background-color: none;
 }
