@@ -1,0 +1,400 @@
+@import url('https://fonts.googleapis.com/css2?family=Teko:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+
+:root {
+  /** Uses 2369 colors from https://codepen.io/Mokurunner/details/eqtHl **/
+  --yellow: #ffcc66;
+  --offblack: #333344;
+  --orange: #ff9900;
+  --peach: #ff9966;
+  --aubergine: #cc6666;
+  --purple: #cc6699;
+  --violet: #cc99cc;
+  --blue: #9999ff;
+  --grey: #9999cc;
+
+  background-color: black;
+  color: var(--yellow);
+  font-family: Teko;
+  font-size: 10pt;
+}
+
+
+/** Page **/
+#write {
+  position: relative;
+  min-height: calc(100vh - 10rem);
+  width: 80vw;
+  max-width: 24cm;
+  
+  margin: 6rem auto;
+  padding: 2rem;
+  
+  border-radius: 2rem 0rem 0rem 0rem;
+  box-shadow: 
+    -2rem -4rem 0 0 var(--purple),
+    0rem  -4rem 0 0 var(--purple),
+    -2rem 0rem 0 0 var(--purple);
+}
+
+#write:before {
+  content: "TYPORA";
+  
+  position: absolute;
+  bottom: 100%; right: 5rem;
+  
+  height: 4rem;
+  
+  background-color: black;
+  
+  box-shadow: 
+    -2rem 0 0 var(--orange),
+    -2.5rem 0 0 black,
+    -8.5rem 0 0 var(--grey),
+    -9rem 0 0 black;
+  
+  box-sizing: content-box;
+  padding: 0 1rem;
+  
+  line-height: 5rem;
+  font-size: 5rem;
+}
+#write * {
+  max-width: 100%;
+}
+
+/* Side bars */
+h1, 
+h2, 
+h3,
+h4,
+h5,
+h6,
+hr {
+   box-shadow: 
+    -2rem 0 0 0 black,
+    -4rem 0 0 0 var(--orange),
+    -4rem 0 0 0.5rem black;
+}
+pre, 
+img {
+  box-shadow: 
+    -2rem 0 0 0 black,
+    -4rem 0 0 0 var(--grey),
+    -4rem 0 0 0.5rem black;
+}
+blockquote *,
+.CodeMirror * {
+  box-shadow: none;
+}
+
+/** Headings **/
+h1, 
+h2, 
+h3,
+h4,
+h5,
+h6 {
+  position: relative;
+  
+  margin: 2rem 0;
+  
+  white-space: nowrap;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+  
+  text-transform: uppercase;
+  font-weight: 500;
+  
+  line-height: 0.8em !important;
+  height: 0.8em !important;
+}
+h1::-webkit-scrollbar,
+h2::-webkit-scrollbar,
+h3::-webkit-scrollbar,
+h4::-webkit-scrollbar,
+h5::-webkit-scrollbar,
+h6::-webkit-scrollbar {
+  display: none;
+}
+h1 {
+  font-size: 4.5rem;
+}
+h2 {
+  font-size: 3.5rem;
+}
+h3 {
+  font-size: 3rem;
+}
+h4 {
+  font-size: 2.5rem;
+}
+h5 {
+  font-size: 2rem;
+}
+h6 {
+  font-size: 1.5rem;
+}
+/* Bar before headings and semicircle after */
+h1:before,
+h2:before,
+h3:before,
+h4:before,
+h5:before,
+h6:before {
+  position: relative;
+  display: inline-block;
+  content: " ";
+  background-color: var(--orange);
+  width: 2rem;
+  height: 0.7em;
+  margin-right: 0.2em;
+}
+h1:after,
+h2:after,
+h3:after,
+h4:after,
+h5:after,
+h6:after {
+  position: relative;
+  display: inline-block;
+  content: " ";
+  background-color: var(--orange);
+  width: 0.5em;
+  border-radius: 0 0.5em 0.5em 0;
+  height: 0.7em;
+  margin-left: 0.2em;
+}
+/* Extra bar before subheadings */
+h1:before {
+  margin-left: 1rem;
+  box-shadow: 
+    -0.5rem 0 0 0 black,
+    -1rem 0 0 0 var(--offblack);
+}
+h2:before {
+  margin-left: 2rem;
+  box-shadow: 
+    -0.5rem 0 0 0 black,
+    -1rem 0 0 0 var(--offblack),
+    -1.5rem 0 0 0 black,
+    -2rem 0 0 0 var(--offblack);
+}
+h3:before {
+  margin-left: 3rem;
+  box-shadow: 
+    -0.5rem 0 0 0 black,
+    -1rem 0 0 0 var(--offblack),
+    -1.5rem 0 0 0 black,
+    -2rem 0 0 0 var(--offblack),
+    -2.5rem 0 0 0 black,
+    -3rem 0 0 0 var(--offblack);
+}
+h4:before {
+  margin-left: 4rem;
+  box-shadow: 
+    -0.5rem 0 0 0 black,
+    -1rem 0 0 0 var(--offblack),
+    -1.5rem 0 0 0 black,
+    -2rem 0 0 0 var(--offblack),
+    -2.5rem 0 0 0 black,
+    -3rem 0 0 0 var(--offblack),
+    -3.5rem 0 0 0 black,
+    -4rem 0 0 0 var(--offblack);
+}
+h5:before {
+  margin-left: 5rem;
+  box-shadow: 
+    -0.5rem 0 0 0 black,
+    -1rem 0 0 0 var(--offblack),
+    -1.5rem 0 0 0 black,
+    -2rem 0 0 0 var(--offblack),
+    -2.5rem 0 0 0 black,
+    -3rem 0 0 0 var(--offblack),
+    -3.5rem 0 0 0 black,
+    -4rem 0 0 0 var(--offblack),
+    -4.5rem 0 0 0 black,
+    -5rem 0 0 0 var(--offblack);
+}
+h6:before {
+  margin-left: 6rem;
+  box-shadow: 
+    -0.5rem 0 0 0 black,
+    -1rem 0 0 0 var(--offblack),
+    -1.5rem 0 0 0 black,
+    -2rem 0 0 0 var(--offblack),
+    -2.5rem 0 0 0 black,
+    -3rem 0 0 0 var(--offblack),
+    -3.5rem 0 0 0 black,
+    -4rem 0 0 0 var(--offblack),
+    -4.5rem 0 0 0 black,
+    -5rem 0 0 0 var(--offblack),
+    -5.5rem 0 0 0 black,
+    -6rem 0 0 0 var(--offblack);
+}
+/** Block Elements **/
+p, li, table, dl {
+  z-index: -1;
+  margin: 2rem 0;
+  
+  font-size: 1.5rem;
+  letter-spacing: 0.1rem;
+}
+
+blockquote {
+  z-index: 1;
+  
+  margin: 2rem 0;
+  padding-left: 1rem;
+    
+  border-left: 0.5rem solid var(--offblack);
+}
+
+*::marker {
+  color: var(--aubergine);
+  font-weight: 800;
+}
+
+hr {
+  border: none;
+  background-color: var(--yellow);
+  height: 0.5rem;
+  border-radius: 0 0.5rem 0.5rem 0;
+}
+li hr, table hr, blockquote hr, di hr, dd hr {
+  box-shadow: none;
+}
+
+pre {
+  padding: 1rem;
+  background-color: var(--offblack) !important;
+  font-family: Share Tech Mono;
+}
+li pre, table pre, blockquote pre, di pre, dd pre {
+  box-shadow: none;
+}
+
+img {
+}
+li img, table img, blockquote img, di img, dd img {
+  box-shadow: none;
+}
+
+table {
+  position: relative;
+  border-collapse: separate;
+  border-spacing: 0.5rem;
+  left: 0.5rem;
+}
+th, td {
+  padding: 0.5rem 1rem;
+}
+table th,
+table td {
+  background-color: var(--offblack);
+  position: relative;
+}
+table th {
+  background-color: var(--grey);
+  color: black;
+}
+table th:first-child:before,
+table td:first-child:before {
+  content: " ";
+  position: absolute;
+  right: calc(100% + 0.5rem);
+  top: 0; bottom: 0;
+  width: 0.5rem;
+}
+table th:last-child:after,
+table td:last-child:after {
+  content: " ";
+  position: absolute;
+  left: calc(100% + 0.5rem);
+  top: 0; bottom: 0;
+  width: 2rem;
+  border-radius: 0 2rem 2rem 0;
+}
+table th:last-child:after,
+table th:first-child:before {
+  background-color: var(--grey);
+}
+table td:last-child:after,
+table td:first-child:before{
+  background-color: var(--offblack);
+}
+
+/** Inline Elements **/
+
+
+a {
+  color: var(--violet);
+}
+a:hover {
+  color: var(--orange)
+}
+a:visited {
+  color: var(--blue)
+}
+table a, table a:visited {
+  color: black;
+}
+
+code {
+  box-sizing: border-box;
+  padding: 0.1rem 0.5rem;
+  
+  background-color: var(--offblack);
+  
+  font-family: Share Tech Mono;
+}
+
+mark {
+  box-sizing: border-box;
+  padding: 0.1rem 0.5rem;
+  
+  background-color: var(--yellow);
+  color: black;
+}
+
+*::selection { 
+  background-color: var(--yellow);
+  color: black;
+}
+
+/** Typora specific **/
+p>.md-image:only-child {
+  width: auto !important;
+}
+
+sup.md-footnote {
+  color: black;
+}
+
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre {
+  width: auto;
+}
+
+h3.md-focus:before {
+    border-radius: 2rem 0 0 2rem;
+}
+h4.md-focus:before, h5.md-focus:before, h6.md-focus:before {
+  border-radius: 0;
+}
+h3.md-focus:before, h4.md-focus:before, h5.md-focus:before, h6.md-focus:before {
+    content: '';
+    color: none;
+    border: none;
+    position:  relative;
+    left: auto;
+    top: auto;
+    float: auto;
+    font-size: auto;
+    padding-left: auto;
+    padding-right: auto;
+    vertical-align: auto;
+    font-weight: auto;
+    line-height: auto;
+}
