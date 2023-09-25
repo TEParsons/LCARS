@@ -99,17 +99,10 @@ h6 {
   
   margin: 2rem 0;
   
-  white-space: nowrap;
-  overflow-x: scroll;
-  overflow-y: hidden;
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
-  
   text-transform: uppercase;
   font-weight: 500;
   
   line-height: 0.8em !important;
-  height: 0.8em !important;
 }
 h1::-webkit-scrollbar,
 h2::-webkit-scrollbar,
@@ -368,7 +361,6 @@ mark {
   font-family: Share Tech Mono;
   background-color: none;
 }
-
-p>img:only-child {
-  margin-left: 0;
+img {
+  margin-left: 0 !important;
 }
