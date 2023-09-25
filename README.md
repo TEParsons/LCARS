@@ -5,8 +5,14 @@ Designed by [Michael Okuda](https://memory-alpha.fandom.com/wiki/Michael_Okuda) 
 With this Typora theme, you can feel like a bridge officer aboard the Enterprise as you edit your Markdown files.
 
 > Make it so!
+>
 > \- [Cpt. Jean Luc Picard](https://memory-alpha.fandom.com/wiki/Jean-Luc_Picard)
+
+## Screenshots
+![Full screen](docs/fullscreen.png)
+
+![As a small window](docs/windowed.png)
 
 ## How to install
 
-Download and extract the .zip file for the latest release in Releases from this GitHub page, then copy the contained CSS file to your Typora themes folder.
+Download the .css file for the latest release from GitHub, then copy the contained CSS file to your Typora themes folder.
