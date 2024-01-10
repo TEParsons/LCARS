@@ -26,7 +26,6 @@
   min-height: calc(100vh - 10rem);
   width: 80vw;
   max-width: 24cm;
-  background-color: none;
   
   margin: 6rem auto;
   padding: 2rem;
@@ -230,7 +229,6 @@ h6:before {
 }
 /** Block Elements **/
 p, li, table, dl {
-  z-index: -1;
   margin: 2rem 0;
   
   font-size: 1.5rem;
