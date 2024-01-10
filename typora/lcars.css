@@ -26,6 +26,7 @@
   min-height: calc(100vh - 10rem);
   width: 80vw;
   max-width: 24cm;
+  background-color: none;
   
   margin: 6rem auto;
   padding: 2rem;
