@@ -373,7 +373,10 @@ img {
 #typora-sidebar, .dropdown-menu {
   background-color: var(--black);
 }
-h3.md-focus:before {
+h3.md-focus:before, 
+h4.md-focus:before, 
+h5.md-focus:before, 
+h6.md-focus:before {
   position: relative;
   font-size: inherit;
   line-height: 100%;
