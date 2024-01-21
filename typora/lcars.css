@@ -12,6 +12,13 @@
   --violet: #cc99cc;
   --blue: #9999ff;
   --grey: #9999cc;
+  /** Overload some Typora colours **/
+  --side-bar-bg-color: #000000;
+  --bg-color: #000000;
+  --text-color: var(--yellow);
+  --item-hover-bg-color: var(--offblack);
+  --select-text-bg-color: var(--yellow);
+  --select-text-font-color: black;
 
   background-color: black;
   color: var(--yellow);
@@ -362,4 +369,7 @@ mark {
 }
 img {
   margin-left: 0 !important;
+}
+#typora-sidebar, .dropdown-menu {
+  background-color: var(--black);
 }
