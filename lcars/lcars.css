@@ -1,0 +1,521 @@
+/** Load fonts from files **/
+/* Share Tech (mono) */
+@font-face {
+  font-family: 'Share Tech Mono';
+  font-weight: 400;
+  src: url("fonts/ShareTechMono-Regular.ttf");
+}
+/* Teko */
+@font-face {
+  font-family: 'Teko';
+  font-weight: 300;
+  src: url("fonts/Light.ttf");
+}
+@font-face {
+  font-family: 'Teko';
+  font-weight: 400;
+  src: url("fonts/Teko-Regular.ttf");
+}
+@font-face {
+  font-family: 'Teko';
+  font-weight: 500;
+  src: url("fonts/Teko-Medium.ttf");
+}
+@font-face {
+  font-family: 'Teko';
+  font-weight: 600;
+  src: url("fonts/Teko-SemiBold.ttf");
+}
+@font-face {
+  font-family: 'Teko';
+  font-weight: 700;
+  src: url("fonts/Teko-Bold.ttf");
+}
+
+:root {
+  /* uses 2369 colors from https://codepen.io/Mokurunner/details/eqtHl */
+  --yellow: #ffcc66;
+  --orange: #ff9900;
+  --peach: #ff9966;
+  --aubergine: #cc6666;
+  --purple: #cc6699;
+  --violet: #cc99cc;
+  --blue: #9999ff;
+  --grey: #9999cc;
+  /* theme colours */
+  --primary: var(--orange);
+  --secondary: var(--purple);
+  --tertiary: var(--grey);
+  /* background colours */
+  --base: #000000;
+  --mantle: #0d0d11;
+  --crust: #333344;
+  background-color: var(--base);
+  /* text colour */
+  --text: var(--yellow);
+  color: var(--text);
+  /* fonts */
+  --head: 'Teko';
+  --body: 'Teko';
+  --mono: 'Share Tech Mono';
+  font-family: var(--body);
+  font-size: 10pt;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+}
+
+/* page */
+.lcars-page,
+#write {
+  position: relative;
+  min-height: calc(100vh - 10rem);
+  width: 80vw;
+  max-width: 24cm;
+  
+  margin: auto;
+  padding: 2rem;
+  
+  border-radius: 2rem 0rem 0rem 0rem;
+  box-shadow: 
+    -2rem -4rem 0rem 0rem var(--purple),
+    0rem  -4rem 0rem 0rem var(--purple),
+    -2rem 0 0rem 0rem var(--purple);
+}
+.lcars-page *,
+#write * {
+  max-width: 100%;
+}
+
+/* title */
+.lcars-title,
+#write:before {  
+  position: absolute;
+  bottom: 100%; 
+  height: calc(4rem + 1px); 
+  right: 5rem;
+  
+  background-color: var(--base);
+  
+  box-shadow: 
+    -2rem 0 0 var(--primary),
+    -2.5rem 0 0 var(--base),
+    -8.5rem 0 0 var(--tertiary),
+    -9rem 0 0 var(--base);
+  
+  box-sizing: content-box;
+  padding: 0 1rem;
+  
+  line-height: 5rem;
+  font-size: 5rem;
+}
+
+/* header */
+.lcars-header {
+  display: grid;
+  position: relative;
+  grid-template-columns: auto max-content;
+  margin-bottom: 4rem;
+  box-shadow: none;
+  width: 80vw;
+  max-width: 24cm;
+  padding: 2rem;
+  margin: 0 auto 10rem auto;
+  gap: 2rem;
+
+  border-radius: 0 0 0 2rem;
+  box-shadow: 
+  -2rem 4rem 0 0 var(--tertiary),
+  0rem  4rem 0 0 var(--tertiary),
+  -2rem 0 0 0 var(--tertiary);
+}
+
+/* logo */
+.lcars-logo {
+  width: auto;
+  height: 8rem;
+  margin: auto;
+  box-shadow: none;
+  object-fit: contain;
+}
+
+/* nav */
+.lcars-nav {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 1rem;
+  box-shadow: 
+    -2rem 0 0 0 var(--base),
+    -4rem 0 0 0 var(--secondary),
+    -4rem 0 0 0.5rem var(--base);
+}
+.lcars-nav a, .lcars-nav a:visited {
+  text-decoration: none;
+  color: var(--base);
+  text-align: right;
+  background-color: var(--crust);
+  padding: 1em 1em 0.2em 1rem;
+  border-radius: 1.5em;
+  white-space: nowrap;
+}
+.lcars-nav a:hover {
+  color: var(--base);
+  background-color: var(--primary);
+}
+
+/* toc */
+.lcars-toc {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  left: 0;
+  gap: 1rem;
+}
+.lcars-toc a, .lcars-toc a:visited {
+  position: relative;
+  padding: 0.5rem 1rem;
+  background-color: var(--crust);
+  color: var(--base);
+  text-align: right;
+  text-decoration: none;
+  text-transform: uppercase;
+  box-shadow: 
+    -0.5rem 0 0 0 var(--base),
+    -1rem 0 0 0 var(--secondary);
+}
+.lcars-toc a:after {
+  content: " ";
+  position: absolute;
+  left: calc(100% + 0.5rem);
+  top: 0;
+  bottom: 0;
+  width: 1.5em;
+  background-color: var(--primary);
+  border-radius: 0 2em 2em 0;
+}
+.lcars-toc a:hover {
+  color: var(--base);
+  background-color: var(--tertiary);
+}
+
+
+/* Side bars */
+h1, 
+h2, 
+h3,
+h4,
+h5,
+h6,
+hr {
+   box-shadow: 
+    -2rem 0 0 0 var(--base),
+    -4rem 0 0 0 var(--primary),
+    -4rem 0 0 0.5rem var(--base);
+}
+pre, 
+img {
+  box-shadow: 
+    -2rem 0 0 0 var(--base),
+    -4rem 0 0 0 var(--tertiary),
+    -4rem 0 0 0.5rem var(--base);
+}
+blockquote *,
+.CodeMirror * {
+  box-shadow: none;
+}
+
+/** Headings **/
+h1, 
+h2, 
+h3,
+h4,
+h5,
+h6 {
+  position: relative;
+  
+  margin: 2rem 0;
+  
+  text-transform: uppercase;
+  font-weight: 500;
+  
+  line-height: 0.8em !important;
+}
+h1::-webkit-scrollbar,
+h2::-webkit-scrollbar,
+h3::-webkit-scrollbar,
+h4::-webkit-scrollbar,
+h5::-webkit-scrollbar,
+h6::-webkit-scrollbar {
+  display: none;
+}
+h1 {
+  font-size: 4.5rem;
+}
+h2 {
+  font-size: 3.5rem;
+}
+h3 {
+  font-size: 3rem;
+}
+h4 {
+  font-size: 2.5rem;
+}
+h5 {
+  font-size: 2rem;
+}
+h6 {
+  font-size: 1.5rem;
+}
+/* Bar before headings and semicircle after */
+h1:before,
+h2:before,
+h3:before,
+h4:before,
+h5:before,
+h6:before {
+  position: relative;
+  display: inline-block;
+  content: " ";
+  background-color: var(--primary);
+  width: 2rem;
+  height: 0.7em;
+  margin-right: 0.2em;
+}
+h1:after,
+h2:after,
+h3:after,
+h4:after,
+h5:after,
+h6:after {
+  position: relative;
+  display: inline-block;
+  content: " ";
+  background-color: var(--primary);
+  width: 0.5em;
+  border-radius: 0 0.5em 0.5em 0;
+  height: 0.7em;
+  margin-left: 0.2em;
+}
+/* Extra bar before subheadings */
+h1:before {
+  margin-left: 1rem;
+  box-shadow: 
+    -0.5rem 0 0 0 var(--base),
+    -1rem 0 0 0 var(--crust);
+}
+h2:before {
+  margin-left: 2rem;
+  box-shadow: 
+    -0.5rem 0 0 0 var(--base),
+    -1rem 0 0 0 var(--crust),
+    -1.5rem 0 0 0 var(--base),
+    -2rem 0 0 0 var(--crust);
+}
+h3:before {
+  margin-left: 3rem;
+  box-shadow: 
+    -0.5rem 0 0 0 var(--base),
+    -1rem 0 0 0 var(--crust),
+    -1.5rem 0 0 0 var(--base),
+    -2rem 0 0 0 var(--crust),
+    -2.5rem 0 0 0 var(--base),
+    -3rem 0 0 0 var(--crust);
+}
+h4:before {
+  margin-left: 4rem;
+  box-shadow: 
+    -0.5rem 0 0 0 var(--base),
+    -1rem 0 0 0 var(--crust),
+    -1.5rem 0 0 0 var(--base),
+    -2rem 0 0 0 var(--crust),
+    -2.5rem 0 0 0 var(--base),
+    -3rem 0 0 0 var(--crust),
+    -3.5rem 0 0 0 var(--base),
+    -4rem 0 0 0 var(--crust);
+}
+h5:before {
+  margin-left: 5rem;
+  box-shadow: 
+    -0.5rem 0 0 0 var(--base),
+    -1rem 0 0 0 var(--crust),
+    -1.5rem 0 0 0 var(--base),
+    -2rem 0 0 0 var(--crust),
+    -2.5rem 0 0 0 var(--base),
+    -3rem 0 0 0 var(--crust),
+    -3.5rem 0 0 0 var(--base),
+    -4rem 0 0 0 var(--crust),
+    -4.5rem 0 0 0 var(--base),
+    -5rem 0 0 0 var(--crust);
+}
+h6:before {
+  margin-left: 6rem;
+  box-shadow: 
+    -0.5rem 0 0 0 var(--base),
+    -1rem 0 0 0 var(--crust),
+    -1.5rem 0 0 0 var(--base),
+    -2rem 0 0 0 var(--crust),
+    -2.5rem 0 0 0 var(--base),
+    -3rem 0 0 0 var(--crust),
+    -3.5rem 0 0 0 var(--base),
+    -4rem 0 0 0 var(--crust),
+    -4.5rem 0 0 0 var(--base),
+    -5rem 0 0 0 var(--crust),
+    -5.5rem 0 0 0 var(--base),
+    -6rem 0 0 0 var(--crust);
+}
+/** Block Elements **/
+p, li, table, dl {
+  margin: 2rem 0;
+  
+  font-size: 1.5rem;
+  letter-spacing: 0.1rem;
+}
+
+blockquote {
+  z-index: 1;
+  
+  margin: 2rem 0;
+  padding-left: 1rem;
+    
+  border-left: 0.5rem solid var(--crust);
+}
+
+*::marker {
+  color: var(--aubergine);
+  font-weight: 800;
+}
+
+hr {
+  border: none;
+  background-color: var(--yellow);
+  height: 0.5rem;
+  border-radius: 0 0.5rem 0.5rem 0;
+}
+li hr, table hr, blockquote hr, di hr, dd hr {
+  box-shadow: none;
+}
+
+pre {
+  padding: 1rem;
+  background-color: var(--crust) !important;
+  font-family: var(--mono);
+}
+li pre, table pre, blockquote pre, di pre, dd pre {
+  box-shadow: none;
+}
+
+li img, table img, blockquote img, di img, dd img {
+  box-shadow: none;
+}
+
+table {
+  position: relative;
+  border-collapse: separate;
+  border-spacing: 0.5rem;
+  left: 0.5rem;
+  width: calc(100% - 3rem);
+}
+th, td {
+  padding: 0.5rem 1rem;
+}
+table th,
+table td {
+  background-color: var(--crust);
+  position: relative;
+}
+table th {
+  background-color: var(--tertiary);
+  color: var(--base);
+}
+table th:first-child:before,
+table td:first-child:before {
+  content: " ";
+  position: absolute;
+  right: calc(100% + 0.5rem);
+  top: 0; bottom: 0;
+  width: 0.5rem;
+}
+table th:last-child:after,
+table td:last-child:after {
+  content: " ";
+  position: absolute;
+  left: calc(100% + 0.5rem);
+  top: 0; bottom: 0;
+  width: 2rem;
+  border-radius: 0 2rem 2rem 0;
+}
+table th:last-child:after,
+table th:first-child:before {
+  background-color: var(--tertiary);
+}
+table td:last-child:after,
+table td:first-child:before{
+  background-color: var(--crust);
+}
+
+/** Inline Elements **/
+
+
+a {
+  font-size: 1.5rem;
+  color: var(--secondary);
+}
+a:hover {
+  color: var(--orange)
+}
+a:visited {
+  color: var(--blue)
+}
+table a, table a:visited {
+  color: var(--base);
+}
+
+code {
+  box-sizing: border-box;
+  padding: 0.1rem 0.5rem;
+  
+  background-color: var(--crust);
+  
+  font-family: var(--mono);
+}
+
+mark {
+  box-sizing: border-box;
+  padding: 0.1rem 0.5rem;
+  
+  background-color: var(--yellow);
+  color: var(--base);
+}
+
+*::selection { 
+  background-color: var(--yellow);
+  color: var(--base);
+}
+
+/** Typora specific **/
+.CodeMirror * {
+  font-family: var(--mono);
+  background-color: none;
+}
+img {
+  max-width: 100%;
+  margin-left: 0 !important;
+}
+#typora-sidebar, .dropdown-menu {
+  background-color: var(--black);
+}
+h3.md-focus:before, 
+h4.md-focus:before, 
+h5.md-focus:before, 
+h6.md-focus:before {
+  position: relative;
+  font-size: inherit;
+  line-height: 100%;
+  height: 100%;
+  border: none;
+  color: rgba(0, 0, 0, 0.4);;
+  top: 0;
+  left: 0;
+}
