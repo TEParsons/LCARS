@@ -144,8 +144,9 @@ body {
 /* nav */
 .lcars-nav {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  gap: 1rem;
+  grid-auto-flow: column;
+  justify-content: left;
+  column-gap: 1rem;
   box-shadow: 
     -2rem 0 0 0 var(--base),
     -4rem 0 0 0 var(--secondary),
@@ -157,7 +158,8 @@ body {
   text-align: right;
   background-color: var(--crust);
   padding: 1em 1em 0.2em 1rem;
-  border-radius: 1.5em;
+  border-radius: 1.5rem;
+  font-size: 1.5rem;
   white-space: nowrap;
 }
 .lcars-nav a:hover {
@@ -459,7 +461,6 @@ table td:first-child:before{
 
 
 a {
-  font-size: 1.5rem;
   color: var(--secondary);
 }
 a:hover {
